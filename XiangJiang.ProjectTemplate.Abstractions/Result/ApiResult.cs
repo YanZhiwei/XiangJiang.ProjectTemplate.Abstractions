@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Net;
 
 namespace XiangJiang.ProjectTemplate.Abstractions.Result
 {
@@ -71,7 +70,7 @@ namespace XiangJiang.ProjectTemplate.Abstractions.Result
         /// <returns>OperatedResult</returns>
         public static ApiResult<T> Success(string message, T data)
         {
-            var successResult = new ApiResult<T>(message, data, true, (int) HttpStatusCode.OK);
+            var successResult = new ApiResult<T>(message, data, true, 200);
             return successResult;
         }
 
@@ -82,7 +81,7 @@ namespace XiangJiang.ProjectTemplate.Abstractions.Result
         /// <returns>OperatedResult</returns>
         public static ApiResult<T> Success(T data)
         {
-            var successResult = new ApiResult<T>(null, data, true, (int) HttpStatusCode.OK);
+            var successResult = new ApiResult<T>(null, data, true, 200);
             return successResult;
         }
 
